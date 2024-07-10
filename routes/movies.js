@@ -21,12 +21,12 @@ router.get('/', (req, res) => {
         .then(response => response.json())
         .then(data => {
 
-            const travel = `https://image.tmdb.org/t/p/w500`;
+            // const travel = `https://image.tmdb.org/t/p/w500`;
 
-            const moviesData = data.results.map(e => {
-                return { title: e.original_title, poster: travel + e.poster_path, overview: e.overview.length > 250 ? (e.overview.substring(0, 250) + "...") : e.overview, voteAverage: e.vote_average, voteCount: e.vote_count }
-            })
-            res.json(moviesData)
+            // const moviesData = data.results.map(e => {
+            //     return { title: e.original_title, poster: travel + e.poster_path, overview: e.overview.length > 250 ? (e.overview.substring(0, 250) + "...") : e.overview, voteAverage: e.vote_average, voteCount: e.vote_count }
+            // })
+            res.json(data)
         })
         .catch(err => console.error(err));
 })
